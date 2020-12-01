@@ -1,10 +1,35 @@
 <template>
+
+     <p> User : {{user.username}}</p>
+   
   <div id="nav">
     <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+    <router-link to="/about">About</router-link> |
+    <router-link to="/Login">Login</router-link> |
+    <router-link to="/Regis">Register</router-link> |
   </div>
   <router-view />
 </template>
+
+<script lang="ts">
+import Vue from 'vue'
+import {computed} from 'vue'
+import store from "./store/data"
+
+
+export default{
+  setup(){
+
+        const user  = store.state.user
+        return{
+            user
+        }
+    }
+}
+
+
+
+</script>
 
 <style>
 #app {
